@@ -2,6 +2,22 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Vscode recommended extensions
+
+ES7 REact/Redux/React native snippets
+Simple react snnipets
+Auto close tag
+Paste Json as code
+Tipescript importer
+
+rafc
+
+Windows problem user whitespace
+
+https://stackoverflow.com/questions/58354348/windows-10-npx-create-react-app-myapp-command-does-not-work-because-of-whit
+
+https://stackoverflow.com/questions/34600932/npm-eperm-operation-not-permitted-on-windows
+
 ## Available Scripts
 
 In the project directory, you can run:

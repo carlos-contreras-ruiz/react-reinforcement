@@ -1,17 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
-import { reqResApi } from "../api/reqRes"
-import { ReqResList, User } from '../interfaces/reqRes';
+import { useUsuarios } from '../hooks/useUsuarios';
+import { User } from '../interfaces/reqRes';
 
 export const Usuarios = () => {
 
-    const [usuarios, setUsuarios] = useState<User[]>([])
+    const {usuarios, nextPage, prevPage} = useUsuarios();
     
-     const paginaRef = useRef(1)
-
-    useEffect(() => {
-        cargarUsuarios()
-    }, [])
-
     const renderItem = (usuario: User) => {
         return (
             <tr key={usuario.id}>
@@ -27,22 +20,7 @@ export const Usuarios = () => {
         )
     }
 
-    const cargarUsuarios = async()=>{
-        const resp = await reqResApi.get<ReqResList>('/users',{
-            params:{
-                page: paginaRef.current
-            }
-        })
-
-        if(resp.data.data.length > 0){
-            paginaRef.current++
-            setUsuarios(resp.data.data)
-        }else{
-            alert('No hay mas registros')
-        }
-
-        
-    }
+    
 
     return (
         <>
@@ -65,7 +43,11 @@ export const Usuarios = () => {
             </table>
 
             <button className="btn btn-primary" 
-                onClick={cargarUsuarios}
+                onClick={prevPage}
+            >Previous</button>
+            <br />
+            <button className="btn btn-primary" 
+                onClick={nextPage}
             >Next</button>
         </>
     )

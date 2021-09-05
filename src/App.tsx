@@ -1,6 +1,7 @@
 /*import { Contador } from "./components/Contador"
 import { ContadorHook } from "./components/ContadorHook"
 import { Login } from "./components/Login"*/
+import { Formularios } from "./components/Formularios"
 import { Usuarios } from "./components/Usuarios"
 /*import { Funciones } from "./typescript/Funciones"
 import { ObjetosLiterales } from "./typescript/ObjetosLiterales"
@@ -23,6 +24,7 @@ const App = () => {
       <hr/> 
       <Login/>*/}
       <Usuarios/>
+      <Formularios/>
     </div>
   )
 }
